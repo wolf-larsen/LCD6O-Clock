@@ -1,0 +1,67 @@
+{
+   "dow": [
+     "Dimanche"
+    ,"Lundi"
+    ,"Mardi"
+    ,"Mercredi"
+    ,"Jeudi"
+    ,"Vendredi"
+    ,"Samedi"
+	]
+  ,"month": [
+     "Janvier"
+    ,"Fevrier"
+    ,"Mars"
+    ,"Avril"
+    ,"Mai"
+    ,"Juin"
+    ,"Juillet"
+    ,"Aout"
+    ,"Septemb."
+    ,"Octobre"
+    ,"Novembre"
+    ,"Decembre"
+	]
+  ,"shortmonth": [
+    "Janv"
+   ,"Fev"
+   ,"Mars"
+   ,"Avr"
+   ,"Mai"
+   ,"Juin"
+   ,"Juil"
+   ,"Aout"
+   ,"Sept"
+   ,"Oct"
+   ,"Nov"
+   ,"Dec"
+ ]
+ ,"nextdays": [
+    "Aujourd'hui"
+   ,"Demain"
+   ,"Apres-demain"
+ ]
+ ,"weather": {
+     "indoor":"Interieur"
+    ,"outdoor":"Exterieur"
+    ,"precipitation":"pluie"
+    ,"winddir":[
+       "N"
+      ,"NNE"
+      ,"NE"
+      ,"ENE"
+      ,"E"
+      ,"ESE"
+      ,"SE"
+      ,"SSE"
+      ,"S"
+      ,"SSO"
+      ,"SO"
+      ,"OSO"
+      ,"O"
+      ,"ONO"
+      ,"NO"
+      ,"NNO"
+    ]
+  }
+}

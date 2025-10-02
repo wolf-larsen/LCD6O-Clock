@@ -1,0 +1,15 @@
+  html {font-family:Helvetica; display:inline-block; margin:0px auto; text-align:center;}
+  body{margin-top:10px; font-size:10px;}
+  h1 {color: #444444;margin: 20px auto 10px; font-size:20px;}
+  h3 {color: #444444;margin-bottom: 10px; font-size:16px;}
+  button {min-width:80px; max-width:320px; background-color:#1abc9c; border:1px solid black; color:white; padding:5px 10px; text-decoration:none; font-size:18px; margin:0px auto 15px; cursor:pointer; border-radius:4px;}
+  .button {min-width:80px; max-width:320px; background-color:#1abc9c; border:1px solid black; color:white; padding:5px 10px; text-decoration:none; font-size:18px; margin:0px auto 15px; cursor:pointer; border-radius:4px;}
+  .midbutton {max-width:240px; background-color:#1adc9c; border:1px solid black; color:white; padding:5px 10px; text-decoration:none; font-size:14px; margin:0px auto 15px; cursor:pointer; border-radius:3px;}
+  p {font-size:16px; color:white; margin-bottom:10px;}
+  .frm {margin-left:auto; margin-right:auto;}
+  .lib {text-align:right;}
+  input {border:1px solid black; background-color:#fcf3cf; font-size:14px; border-radius:4px;}
+  select {background-color:#fcf3cf;}
+  td {font-size:14px; text-align:left;}
+  th {font-size:24px;}
+

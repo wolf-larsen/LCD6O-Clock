@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>6 o'Clock</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="start.js"></script>
+</head>
+<body style="background: repeat url('bg.webp');">
+<h1>6 o'Clock</h1>
+<form method="post" enctype="application/x-www-form-urlencoded" action="/mainpost">
+<table class=frm>
+<tr>
+<th colspan="2">WIFI</th>
+</tr>
+<tr>
+<td class="lib">WiFi SSID</td>
+<td><input colspan="4" maxlength="32" size="32" type="text" id="ssid" name="ssid"/></td>
+</tr>
+<tr>
+<td class="lib">Replace with access point</td>
+<td><select colspan="4" id="aplist" name="aplist" onchange="updssid();"></td>
+</tr>
+<td class="lib">Password</td>
+<td><input colspan="4" maxlength="32" size="32" type="text" id="password" name="password"/></td>
+</tr>
+
+<tr>
+<th colspan="2">Alarm</th>
+</tr>
+<tr>
+<td class="lib">Alarm 1</td>
+<td>
+  <input type="checkbox" id="al1c" name="al1c"/>
+  <input maxlength="5" size="5" type="time" id="al1" name="al1" min="00:00" max="23:59"/></td>
+</tr>
+<tr>
+<td class="lib">Alarm 2</td>
+<td>
+  <input type="checkbox" id="al2c" name="al2c"/>
+  <input maxlength="5" size="5" type="time" id="al2" name="al2" min="00:00" max="23:59"/>
+</td>
+</tr>
+
+<tr>
+<th colspan="2">Display</th>
+</tr>
+<tr>
+<td class="lib">Splash screen</td>
+</tr>
+<tr>
+<td class="lib"> </td>
+<td>
+ <table class="frm">
+  <tr><td class="lib">Ligne 1</td>
+    <td><input maxlength="10" size="10" type=text" id="ss10" name="ss10"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss11" name="ss11"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss12" name="ss12"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss13" name="ss13"/></td>
+  </tr>
+  <tr><td class="lib">Ligne 2</td>
+    <td><input maxlength="10" size="10" type=text" id="ss20" name="ss20"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss21" name="ss21"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss22" name="ss22"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss23" name="ss23"/></td>
+  </tr>
+  <tr><td class="lib">Ligne 3</td>
+    <td><input maxlength="10" size="10" type=text" id="ss30" name="ss30"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss31" name="ss31"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss32" name="ss32"/></td>
+    <td><input maxlength="10" size="10" type=text" id="ss33" name="ss33"/></td>
+  </tr>
+ </table>
+</td>
+</tr>
+<tr>
+<td class="lib">Display mode</td>
+<td>
+<select colspan="4" type="text" id="displayMode" name="displayMode">
+  <option value="1">Hours, minutes, seconds</option>
+  <option value="2">Hours, minutes and weather</option>
+</select>
+</td>
+</tr>
+  <tr>
+  <td class="lib">Display OFF if LDR value below</td>
+  <td><input maxlength="4" size="4" type="number" id="ldroffv" name="ldroffv" min="0" max="4095"/>
+  <em>(0-4095)</em></td>
+  </tr>
+  <tr>
+  <td class="lib">Backlight value=LDR value divided by</td>
+  <td><input maxlength="3" size="4" type="number" id="ldrfrac" name="ldrfrac" min="1" max="255"/>
+  <em>(1-255)</em></td>
+  </tr>
+  <tr>
+  <td class="lib">LDR hysteresis</td>
+  <td><input maxlength="4" size="4" type="number" id="ldrhyst" name="ldrhyst" min="0" max="4095"/>
+  <em>(0-4095)</em></td>
+  </tr>
+  <tr>
+  <td class="lib">Minimum backlight value</td>
+  <td><input maxlength="3" size="4" type="number" id="blmin" name="blmin" min="0" max="255"/>
+  <em> (0-255)</em></td>
+  </tr>
+  <tr>
+  <td class="lib">Maximum backlight value</td>
+  <td><input maxlength="3" size="3" type="number" id="blmax" name="blmax" min="0" max="255"/>
+  <em>(0-255)</em></td>
+  </tr>
+  <tr>
+  <td class="lib">Display OFF time</td>
+  <td><input maxlength="12" size="12" type="time" id="bltoff" name="bltoff" min="00:00" max="23:59"/></td>
+  </tr>
+  <tr>
+  <td class="lib">Display ON time</td>
+  <td><input maxlength="12" size="12" type="time" id="blton" name="blton" min="00:00" max="23:59"/></td>
+  </tr>
+                    
+<tr>
+<td class="lib"><button type="button" class="midbutton" onclick="sendOrder('TH|1|'+tmlist1.value);">Update alternate<br/>numbers theme 1</button></td>
+<td><select colspan="4" id="tmlist1" name="tmlist1">
+  <option value="">Select a theme</option>
+</select></td>
+</tr>
+<tr>
+<td class="lib"><button type="button" class="midbutton" onclick="sendOrder('TH|2|'+tmlist2.value);">Update alternate<br/>numbers theme 2</button></td>
+<td><select colspan="4" id="tmlist2" name="tmlist2">
+  <option value="">Select a theme</option>
+</select></td>
+</tr>
+        
+<tr>
+<th colspan="2">Weather</th>
+</tr>
+<tr>
+<td class="lib">Delay between weather fetches (sec.)</td>
+<td><input maxlength="12" size="12" type="number" id="WeatherDelaySec" name="WeatherDelaySec"/></td>
+</tr>
+<tr>
+<td class="lib">Delay between indoor temp fetches (sec.)</td>
+<td><input maxlength="12" size="12" type="number" id="IndoorWeatherDelaySec" name="IndoorWeatherDelaySec"/></td>
+</tr>
+<tr>
+<td class="lib">Latitude (number like 43.210)</td>
+<td><input maxlength="12" size="12" type="number" step="any" id="GPSlat" name="GPSlat"/></td>
+</tr>
+<td class="lib">Longitude (number like -1.234)</td>
+<td><input maxlength="12" size="12" type="number" step="any" id="GPSlon" name="GPSlon"/></td>
+</tr>
+<td class="lib">Time Zone (like Europe/London)</td>
+<td><input maxlength="40" size="32" type="text" id="wtimezone" name="wtimezone"/></td>
+
+<tr>
+<th colspan="2">NTP</th>
+</tr>
+<tr>
+<td class="lib">Delay between NTP fetches (sec.)</td>
+<td><input maxlength="12" size="12" type="number" id="NTPAdjustDelaySec" name="NTPAdjustDelaySec"/></td>
+</tr>
+<tr>
+<td class="lib">NTP server</td>
+<td><input maxlength="60" size="32" type="text" id="NTPServer" name="NTPServer"/></td>
+</tr>
+<tr>
+<td class="lib">Time Zone</td>
+<td><input maxlength="60" size="32" type="text" id="ntptimezone" name="ntptimezone"/></td>
+</tr>
+<!--
+<tr>
+<td class="lib">GMT Offset (sec.)</td>
+<td><input maxlength="12" size="12" type="number" id="GMTOffsetSec" name="GMTOffsetSec"/></td>
+</tr>
+<tr>
+<td class="lib">Summertime Offset (sec.)</td>
+<td><input maxlength="12" size="12" type="number" id="summerTimeOffsetSec" name="summerTimeOffsetSec"/></td>
+</tr>
+-->
+
+</table>
+
+<br/>
+<input class="midbutton" type="submit" value="Save">
+<input class="midbutton" style="margin-left:3em;" type="button" onclick="window.location='/';" value="Cancel">
+</form>
+<br/><br/>
+<input class="midbutton" type="button" onclick="sendOrder('i2cscan');" value="I2c bus scanner">
+<input class="midbutton" type="button" onclick="sendOrder('reset');" value="Reset clock">
+
+</body>
+</html>
